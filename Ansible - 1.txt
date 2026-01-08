@@ -1,0 +1,77 @@
+
+Ansible - 1:
+=========
+Configuration Mangement tool
+Python
+Agentless tool
+
+server 50 - service (httpd, nginx, tomcat, mysql)
+
+EC2 - user data - shell 
+
+Master - control node - Python, Ansible - linux
+Slave - manged node - Python - linux, windows
+
+SSH key
+
+Push - Ansible (linux)
+Pull - Chef, puppet
+
+Inventory file - slave ip		- /etc/ansible/host
+Configuration file - ansible configuration	- /etc/ansible/ansible.cfg
+
+pip - python package manager
+
+Adhocs command
+Playbook - script - yaml
+Role 
+Vault
+
+Adhocs - single line cli command - single task
+
+-m - module
+-i - inventory
+-a - action
+-b - become root
+
+#!/bin/bash
+yum install python-pip -y
+pip install ansible
+
+ansible all -i slave.txt -m ping
+ansible all -i slave.txt -a "lsblk"
+ansible all -i slave.txt -a "uname -a"
+
+Grouping:
+========
+[hello]
+10.0.0.0
+10.0.0.1
+[hi]
+10.0.0.2
+10.0.0.3
+10.0.0.4
+10.0.0.5
+
+state:
+present - install
+absent - uninstall
+started - start
+stopped - stop
+restarted - restart
+lastest - update
+
+ansible day1 -i slave.txt -m yum -a "name=httpd state=present" -b
+ansible day1 -i slave.txt -m service -a "name=httpd state=started" -b
+
+
+
+
+
+
+
+
+
+
+
+
