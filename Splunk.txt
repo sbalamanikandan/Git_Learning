@@ -1,0 +1,69 @@
+
+Splunk:
+======
+Monitoring tool
+
+Metrics - cpu, ram, storage
+*Logs - user activity
+Event - specific task
+Application 
+Alarm - notify
+
+Log Moniotoring
+
+Master
+Slave
+
+Splunk forwarder - Agent - collect logs and forward to indexer
+Splunk Indexer - store place
+Search head - to filter logs
+
+Master: ------ port no: 8000
+======
+wget -O splunk-10.0.2-e2d18b4767e9-linux-amd64.tgz "https://download.splunk.com/products/splunk/releases/10.0.2/linux/splunk-10.0.2-e2d18b4767e9-linux-amd64.tgz"
+
+tar -xzf splunk-10.0.2-e2d18b4767e9-linux-amd64.tgz
+
+cd splunk/bin
+
+./splunk start
+
+Slave: ------ port no: 8089
+=====
+wget -O splunkforwarder-10.0.2-e2d18b4767e9-linux-amd64.tgz "https://download.splunk.com/products/universalforwarder/releases/10.0.2/linux/splunkforwarder-10.0.2-e2d18b4767e9-linux-amd64.tgz"
+
+tar -xzf splunkforwarder-10.0.2-e2d18b4767e9-linux-amd64.tgz
+
+cd splunkforwarder/bin
+
+./splunk start --accept-license
+
+listner port - 9997
+
+./splunk enable listen 9997			=	Master
+		
+./splunk add forward-server 13.201.85.50:9997	= 	Slave
+
+./splunk add monitor /var/log/syslog -index 11am	= 	Slave
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
