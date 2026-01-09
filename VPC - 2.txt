@@ -1,0 +1,116 @@
+
+VPC - 2:
+=======
+Virtual Private Cloud
+Network
+Isolation for resoruces
+
+*Public - AWS, AZURE, GCP
+Private - Oracle, IBM
+Hybrid
+
+*CIDR
+*Subnet mask
+*Network bit vs Host bit
+*VPC Components
+*Public Subnet vs Private subnet
+*IGW vs NAT
+*NAT Gateway vs NAT Instance
+*Bastion Host
+*Security group vs NACL
+*VPC Peering vs Transit gateway
+*VPC Endpoints (Private Endpoint) - Gateway(s3, dynamo db), Interface
+*Direct connect
+*Managed prefix
+*Reachability analyzer
+*Accessability analyzer
+******************************************************************
+IP - Internet Protocol
+Public - Global
+Private - Internal
+
+*IPv4 - 32 bits - Nuumeric - 8.8.8.8
+IPv6 - 128 bits - Alphanurmeric
+
+rule:
+0 - 255
+
+0.0.0.0 - 255.255.255.255
+
+CIDR - Classless Inter Domain Routing
+Set of IP
+
+10.0.0.0/32	- 1 ip - 10.0.0.0
+10.0.0.0/31	- 2 ip - 10.0.0.0, 10.0.0.1
+10.0.0.0/30	- 4 ip - 10.0.0.0, 10.0.0.1, 10.0.0.2, 10.0.0.3
+10.0.0.0/29	- 8 ip
+10.0.0.0/28	- 16 ip
+10.0.0.0/27	- 32 ip
+10.0.0.0/26	- 64 ip
+10.0.0.0/25	- 128 ip
+10.0.0.0/24 - 256 ip - 10.0.0.0 - 10.0.0.255
+10.0.0.0/23	- 512 ip
+10.0.0.0/16	- 65535 ip
+
+No. of host = 32 - 29 = 3 = 2^3 = 2*2*2 = 8
+	= 32 - 27 = 5 = 2^5 = 2*2*2*2*2 = 32
+
+10.0.0.255
+10.0.1.0 - 10.0.1.255
+10.0.2.0 - 10.0.2.255
+10.0.255.0 - 10.0.255.255
+10.1.0.0, 10.1.0.1 - 10.1.0.255
+10.1.1.0 - 10.1.1.255
+10.1.2.0 - 10.1.2.255
+10.1.255.255
+10.2.0.0
+10.255.255.255
+11.0.0.0
+
+VPC, Subnet, Internet Gateway, Route table, NAT Gateway, Security Group
+
+Public	 		vs 		Private
+Direct internet Access (IGW)			Secured Internet Access (NAT)
+LB, Front end				Backend, DB
+
+IGW 			vs		 NAT
+Public Subnet				Private Subnet
+Inbound & outbound allow			only outbound
+
+NAT Gateway 		vs 		NAT Instance
+AWS managed				Self managed
+
+Bastion Host (or) Jump host
+SSH tunnleing
+
+Security group 		vs 		NACL(Network Access Control List)
+Ec2 traffic control				Subnet traffic control
+Both inbound and outbound allow		Explicit outbound
+only allow rules				allow and deny
+no rule no					rule no
+
+VPC Peering
+2 VPC
+10.0.0.0/16 - 10.0.0.0 - 10.0.255.255
+10.1.0.0/16  - 10.1.0.0 - 10.1.255.255
+
+Transit gateway
+
+VPC Endpoints (or) Private Endpoint
+Gateway - S3, Dynamo DB
+Interface - all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
